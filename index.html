@@ -2,740 +2,386 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#111111">
-  <title>Sphatlo Spot | Loaded Sphatlo, Ribs & Chips</title>
-  <meta name="description" content="Sphatlo Spot – Loaded sphatlo, ribs, eggs, atchaar and chips. Order for collection on WhatsApp.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f0f0f">
+  <meta name="description" content="Mukomani – Proper sphatlo, ribs, eggs, atchaar & chips. Order for collection on WhatsApp.">
+  <title>Mukomani | Proper Sphatlo & Chips</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #111111;
-      --card: #1c1c1c;
-      --accent: #ff5a1f;
-      --accent-dark: #e04a12;
-      --green: #25d366;
-      --text: #ffffff;
-      --muted: #9a9a9a;
-      --radius: 14px;
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-      font-size: 15px;
-      padding-bottom: 90px;
-    }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-    .container { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0f0f0f;--card:#1a1a1a;--a:#c1121f;--g:#25d366;--t:#fff;--m:#9a9a9a;--r:12px}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--t);line-height:1.5;font-size:15px;padding-bottom:100px}
+    a{text-decoration:none;color:inherit}
+    .c{max-width:720px;margin:0 auto;padding:0 16px}
 
     /* HEADER */
-    header {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      background: rgba(17,17,17,0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .header-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      height: 58px; max-width: 720px; margin: 0 auto; padding: 0 16px;
-    }
-    .logo {
-      display: flex; align-items: center; gap: 8px;
-      font-weight: 800; font-size: 1.2rem; letter-spacing: -0.4px;
-    }
-    .logo span { color: var(--accent); }
-    .header-right { display: flex; align-items: center; gap: 10px; }
-    .status {
-      font-size: 0.68rem; font-weight: 600; padding: 4px 10px; border-radius: 20px;
-      display: flex; align-items: center; gap: 5px;
-    }
-    .status.open { background: rgba(37,211,102,0.15); color: var(--green); }
-    .status.closed { background: rgba(255,90,31,0.18); color: #ff8a5c; }
-    .status-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
-    .wa-header {
-      background: var(--green); color: #fff; font-weight: 600; font-size: 0.8rem;
-      padding: 7px 13px; border-radius: 50px; display: flex; align-items: center; gap: 5px;
-    }
+    header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,15,15,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .hi{display:flex;align-items:center;justify-content:space-between;height:58px;max-width:720px;margin:0 auto;padding:0 16px}
+    .logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:1.1rem;letter-spacing:-.3px}
+    .logo-mark{width:36px;height:36px;border-radius:50%;background:var(--a);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;color:#fff;border:2px solid rgba(255,255,255,.25)}
+    .hr{display:flex;align-items:center;gap:10px}
+    .status{font-size:.7rem;font-weight:700;padding:5px 11px;border-radius:6px;display:flex;align-items:center;gap:6px;letter-spacing:.3px}
+    .status.open{background:#0d2818;color:#3dd68c;border:1px solid #1a5c3a}
+    .status.closed{background:#2a1212;color:#f87171;border:1px solid #5c1a1a}
+    .status-icon{font-size:.85rem;line-height:1}
 
     /* HERO */
-    .hero {
-      padding: 78px 0 36px;
-      background: linear-gradient(165deg, #1f120a 0%, #111 55%, #1a1008 100%);
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 2.15rem; font-weight: 800; line-height: 1.15;
-      margin-bottom: 12px; letter-spacing: -0.6px;
-    }
-    .hero h1 .accent { color: var(--accent); }
-    .hero p {
-      color: var(--muted); font-size: 0.98rem; max-width: 340px;
-      margin: 0 auto 22px; line-height: 1.5;
-    }
-    .hero-btns {
-      display: flex; flex-direction: column; gap: 10px;
-      max-width: 280px; margin: 0 auto 26px;
-    }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      height: 48px; border-radius: 50px; font-weight: 600; font-size: 0.95rem;
-      border: none; cursor: pointer; width: 100%;
-    }
-    .btn-accent { background: var(--accent); color: #fff; }
-    .btn-outline {
-      background: transparent; border: 1.5px solid rgba(255,255,255,0.28); color: #fff;
-    }
-    .hero-meta {
-      display: flex; justify-content: center; flex-wrap: wrap; gap: 18px;
-      font-size: 0.78rem; color: var(--muted);
-    }
-    .hero-meta strong { color: #fff; display: block; font-size: 0.88rem; }
+    .hero{padding:70px 0 28px;background:linear-gradient(180deg,#1a0a0a 0%,#0f0f0f 100%)}
+    .hero-grid{display:grid;gap:20px}
+    .hero-text h1{font-size:1.9rem;font-weight:800;line-height:1.2;margin-bottom:10px;letter-spacing:-.5px}
+    .hero-text h1 span{color:var(--a)}
+    .hero-text p{color:var(--m);font-size:.92rem;margin-bottom:18px;max-width:340px}
+    .hbtns{display:flex;flex-direction:column;gap:8px;max-width:260px;margin-bottom:18px}
+    .btn{display:flex;align-items:center;justify-content:center;height:46px;border-radius:50px;font-weight:600;font-size:.9rem;border:none;cursor:pointer;width:100%}
+    .ba{background:var(--a);color:#fff}
+    .bo{background:transparent;border:1.5px solid rgba(255,255,255,.25);color:#fff}
+    .hm{display:flex;flex-wrap:wrap;gap:14px;font-size:.72rem;color:var(--m)}
+    .hm strong{color:#fff;display:block;font-size:.84rem}
+    .hero-img{border-radius:14px;overflow:hidden;aspect-ratio:16/10;background:#1a1a1a;border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--m);font-size:.85rem;text-align:center;padding:16px}
+    .hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+    .hero-img.empty::before{content:"📷 Add hero photo here\A (assets/hero.jpg)";white-space:pre-line;line-height:1.5}
 
-    /* INTRO STRIP */
-    .intro-strip {
-      background: var(--accent);
-      color: #fff;
-      text-align: center;
-      padding: 14px 16px;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
+    /* STRIP */
+    .strip{background:var(--a);color:#fff;text-align:center;padding:11px 16px;font-weight:600;font-size:.82rem}
 
     /* MENU */
-    .menu-section { padding: 32px 0 40px; }
-    .section-label {
-      font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px;
-      color: var(--accent); text-transform: uppercase; margin-bottom: 6px;
-    }
-    .section-title {
-      font-size: 1.45rem; font-weight: 800; margin-bottom: 6px;
-    }
-    .section-sub {
-      color: var(--muted); font-size: 0.9rem; margin-bottom: 24px;
-    }
+    .menu{padding:28px 0 32px}
+    .sl{font-size:.68rem;font-weight:700;letter-spacing:1.3px;color:var(--a);text-transform:uppercase;margin-bottom:4px}
+    .stitle{font-size:1.3rem;font-weight:800;margin-bottom:4px}
+    .ssub{color:var(--m);font-size:.85rem;margin-bottom:18px}
+    .item{background:var(--card);border-radius:var(--r);padding:12px;margin-bottom:10px;border:1px solid rgba(255,255,255,.06);display:flex;gap:12px;align-items:flex-start}
+    .item.feat{border-color:rgba(193,18,31,.5)}
+    .item-img{width:72px;height:72px;border-radius:10px;flex-shrink:0;background:#252525;display:flex;align-items:center;justify-content:center;color:var(--m);font-size:.7rem;text-align:center;overflow:hidden;border:1px solid rgba(255,255,255,.05)}
+    .item-img img{width:100%;height:100%;object-fit:cover}
+    .item-img.empty::before{content:"📷"}
+    .item-body{flex:1;min-width:0}
+    .it{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+    .in{font-size:.92rem;font-weight:700;line-height:1.3}
+    .ip{color:var(--a);font-weight:800;font-size:1.05rem;white-space:nowrap}
+    .id{font-size:.75rem;color:var(--m);margin:4px 0;line-height:1.35}
+    .tags{display:flex;flex-wrap:wrap;gap:4px;margin:4px 0 6px}
+    .tag{background:rgba(255,255,255,.06);padding:2px 8px;border-radius:20px;font-size:.68rem;color:rgba(255,255,255,.85)}
+    .ib{display:flex;justify-content:space-between;align-items:center}
+    .badge{font-size:.6rem;font-weight:700;padding:2px 7px;border-radius:4px}
+    .badge.hot{background:var(--a);color:#fff}
+    .badge.deal{background:#e85d04;color:#fff}
+    .add{height:32px;padding:0 13px;border-radius:20px;background:var(--g);color:#fff;border:none;font-weight:600;font-size:.78rem;cursor:pointer}
 
-    .item {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 16px;
-      margin-bottom: 12px;
-      border: 1px solid rgba(255,255,255,0.06);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .item.featured {
-      border-color: var(--accent);
-      background: linear-gradient(145deg, #24180f, #1c1c1c);
-    }
-    .item-top {
-      display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;
-    }
-    .item-name {
-      font-size: 1.02rem; font-weight: 700; line-height: 1.3;
-    }
-    .item-price {
-      color: var(--accent); font-weight: 800; font-size: 1.15rem;
-      white-space: nowrap;
-    }
-    .item-desc {
-      font-size: 0.8rem; color: var(--muted); line-height: 1.4;
-    }
-    .tags {
-      display: flex; flex-wrap: wrap; gap: 6px;
-    }
-    .tag {
-      background: rgba(255,255,255,0.07);
-      padding: 3px 10px; border-radius: 20px;
-      font-size: 0.72rem; color: rgba(255,255,255,0.9);
-    }
-    .item-bottom {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-top: 2px;
-    }
-    .badge {
-      font-size: 0.65rem; font-weight: 700; padding: 3px 9px;
-      border-radius: 20px; letter-spacing: 0.3px;
-    }
-    .badge.hot { background: var(--accent); color: #fff; }
-    .badge.deal { background: #ff9f1c; color: #111; }
-    .add-btn {
-      height: 36px; padding: 0 16px; border-radius: 20px;
-      background: var(--green); color: #fff; border: none;
-      font-weight: 600; font-size: 0.82rem; cursor: pointer;
-    }
-
-    /* CHIPS ROW */
-    .chips-row {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-      margin-top: 8px;
-    }
-    .chip-card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 14px;
-      border: 1px solid rgba(255,255,255,0.06);
-      text-align: center;
-    }
-    .chip-card .name { font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
-    .chip-card .price { color: var(--accent); font-weight: 800; font-size: 1.05rem; margin-bottom: 10px; }
-    .chip-card .add-btn { width: 100%; }
+    /* CHIPS */
+    .chips{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+    .cc{background:var(--card);border-radius:var(--r);padding:10px;border:1px solid rgba(255,255,255,.06);display:flex;gap:10px;align-items:center}
+    .cc .item-img{width:56px;height:56px}
+    .cc .n{font-weight:700;font-size:.85rem}
+    .cc .p{color:var(--a);font-weight:800;font-size:.95rem;margin:2px 0 6px}
+    .cc .add{width:auto}
 
     /* INFO */
-    .info-section {
-      padding: 28px 0 40px;
-      background: #0c0c0c;
-    }
-    .info-card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 20px;
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-    .info-row {
-      display: flex; align-items: center; gap: 12px;
-      padding: 11px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      font-size: 0.93rem;
-    }
-    .info-row:last-child { border-bottom: none; }
-    .info-row .icon { font-size: 1.25rem; width: 26px; text-align: center; }
-    .map-link {
-      display: block; margin-top: 16px; text-align: center;
-      background: var(--green); color: #fff; height: 46px; line-height: 46px;
-      border-radius: 50px; font-weight: 700; font-size: 0.9rem;
-    }
-    .wa-link {
-      display: block; margin-top: 10px; text-align: center;
-      background: var(--accent); color: #fff; height: 46px; line-height: 46px;
-      border-radius: 50px; font-weight: 700; font-size: 0.9rem;
-    }
+    .info{padding:24px 0 36px;background:#0a0a0a}
+    .ic{background:var(--card);border-radius:var(--r);padding:16px;border:1px solid rgba(255,255,255,.06)}
+    .ir{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.88rem}
+    .ir:last-of-type{border-bottom:none}
+    .ir .icn{font-size:1.15rem;width:24px;text-align:center}
+    .addr-photo{margin:14px 0;border-radius:10px;overflow:hidden;aspect-ratio:16/9;background:#1f1f1f;border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--m);font-size:.8rem;text-align:center}
+    .addr-photo img{width:100%;height:100%;object-fit:cover}
+    .addr-photo.empty::before{content:"📷 Add location / shop photo\A (assets/location.jpg)";white-space:pre-line;line-height:1.5}
+    .ml,.wl{display:block;text-align:center;height:44px;line-height:44px;border-radius:50px;font-weight:700;font-size:.85rem}
+    .ml{background:var(--g);color:#fff;margin-top:4px}
+    .wl{background:var(--a);color:#fff;margin-top:8px}
 
-    /* FOOTER */
-    footer {
-      padding: 28px 16px; text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      background: #0a0a0a;
-    }
-    footer .brand { font-weight: 800; color: var(--accent); font-size: 1.1rem; margin-bottom: 4px; }
-    footer p { color: var(--muted); font-size: 0.82rem; }
-    footer .copy { margin-top: 12px; font-size: 0.72rem; color: #555; }
+    footer{padding:22px 16px;text-align:center;border-top:1px solid rgba(255,255,255,.05);background:#080808}
+    footer .b{font-weight:800;color:var(--a);font-size:1rem;margin-bottom:2px}
+    footer p{color:var(--m);font-size:.78rem}
+    footer .cp{margin-top:8px;font-size:.68rem;color:#555}
 
     /* CART BAR */
-    .cart-bar {
-      position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
-      background: #181818; border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 10px 16px; display: none;
-    }
-    .cart-bar.show { display: block; }
-    .cart-inner {
-      max-width: 720px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between; gap: 12px;
-    }
-    .cart-info { font-size: 0.85rem; }
-    .cart-info strong { color: var(--green); font-size: 1.08rem; }
-    .cart-btn {
-      background: var(--green); color: #fff; border: none;
-      height: 42px; padding: 0 18px; border-radius: 50px;
-      font-weight: 700; font-size: 0.85rem; cursor: pointer;
-    }
+    .cb{position:fixed;bottom:0;left:0;right:0;z-index:90;background:#161616;border-top:1px solid rgba(255,255,255,.08);padding:9px 16px;display:none}
+    .cb.show{display:block}
+    .ci{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .cif{font-size:.8rem}
+    .cif strong{color:var(--g);font-size:1.02rem}
+    .cbt{background:var(--g);color:#fff;border:none;height:40px;padding:0 16px;border-radius:50px;font-weight:700;font-size:.8rem;cursor:pointer}
+
+    /* FLOATING CHAT */
+    .chat-fab{position:fixed;bottom:70px;right:16px;z-index:95;width:54px;height:54px;border-radius:50%;background:var(--g);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 16px rgba(37,211,102,.4);border:none;cursor:pointer}
+    .chat-fab:active{transform:scale(.95)}
 
     /* MODAL */
-    .modal-overlay {
-      position: fixed; inset: 0; background: rgba(0,0,0,0.78);
-      z-index: 200; display: none; align-items: flex-end; justify-content: center;
-    }
-    .modal-overlay.show { display: flex; }
-    .modal {
-      background: #1c1c1c; width: 100%; max-width: 440px;
-      border-radius: 18px 18px 0 0; padding: 20px 16px 30px;
-      max-height: 85vh; overflow-y: auto;
-    }
-    .modal h3 { font-size: 1.15rem; margin-bottom: 14px; text-align: center; }
-    .cart-item {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
-      font-size: 0.88rem;
-    }
-    .cart-item .remove {
-      background: none; border: none; color: var(--accent);
-      font-size: 0.85rem; cursor: pointer; margin-left: 8px;
-    }
-    .cart-total {
-      display: flex; justify-content: space-between;
-      font-size: 1.12rem; font-weight: 700; margin: 14px 0;
-    }
-    .cart-total span:last-child { color: var(--green); }
-    .checkout-form {
-      margin: 10px 0 8px;
-      display: flex; flex-direction: column; gap: 10px;
-    }
-    .checkout-form label {
-      font-size: 0.72rem; color: var(--muted); font-weight: 600;
-      display: block; margin-bottom: 3px;
-    }
-    .checkout-form input,
-    .checkout-form select {
-      width: 100%; height: 44px; border-radius: 12px;
-      border: 1.5px solid rgba(255,255,255,0.12);
-      background: #111; color: #fff; padding: 0 14px; font-size: 0.93rem;
-    }
-    .form-error {
-      color: #ff8a5c; font-size: 0.78rem; display: none; margin-top: 4px;
-    }
-    .form-error.show { display: block; }
-    .modal-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
-    .close-modal {
-      background: transparent; border: 1.5px solid rgba(255,255,255,0.2);
-      color: #fff; height: 44px; border-radius: 50px; font-weight: 600;
-      cursor: pointer; width: 100%;
-    }
+    .mo{position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:200;display:none;align-items:flex-end;justify-content:center}
+    .mo.show{display:flex}
+    .md{background:#1a1a1a;width:100%;max-width:420px;border-radius:16px 16px 0 0;padding:18px 14px 28px;max-height:85vh;overflow-y:auto}
+    .md h3{font-size:1.08rem;margin-bottom:12px;text-align:center}
+    .cti{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.84rem}
+    .cti .rm{background:none;border:none;color:var(--a);font-size:.8rem;cursor:pointer;margin-left:6px}
+    .ct{display:flex;justify-content:space-between;font-size:1.05rem;font-weight:700;margin:12px 0}
+    .ct span:last-child{color:var(--g)}
+    .cf{margin:8px 0;display:flex;flex-direction:column;gap:8px}
+    .cf label{font-size:.68rem;color:var(--m);font-weight:600;display:block;margin-bottom:2px}
+    .cf input,.cf select{width:100%;height:42px;border-radius:10px;border:1.5px solid rgba(255,255,255,.1);background:#111;color:#fff;padding:0 12px;font-size:.88rem}
+    .fe{color:#f87171;font-size:.74rem;display:none;margin-top:2px}
+    .fe.show{display:block}
+    .ma{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+    .cm{background:transparent;border:1.5px solid rgba(255,255,255,.2);color:#fff;height:42px;border-radius:50px;font-weight:600;cursor:pointer;width:100%}
 
-    @media (min-width: 600px) {
-      .hero h1 { font-size: 2.5rem; }
-      .hero-btns { flex-direction: row; max-width: 420px; }
+    @media(min-width:640px){
+      .hero-grid{grid-template-columns:1fr 1fr;align-items:center}
+      .hero-text h1{font-size:2.2rem}
+      .hbtns{flex-direction:row;max-width:380px}
     }
   </style>
 </head>
 <body>
-
-<!-- HEADER -->
 <header>
-  <div class="header-inner">
-    <a href="#" class="logo">Sphatlo <span>Spot</span></a>
-    <div class="header-right">
-      <div class="status open" id="statusBadge">
-        <span class="status-dot"></span>
-        <span id="statusText">Open</span>
+  <div class="hi">
+    <a href="#" class="logo">
+      <div class="logo-mark">M</div>
+      Mukomani
+    </a>
+    <div class="hr">
+      <div class="status open" id="sb">
+        <span class="status-icon" id="sicon">●</span>
+        <span id="st">OPEN</span>
       </div>
-      <a href="https://wa.me/27839917443?text=Hi%20Sphatlo%20Spot%20%F0%9F%91%8B%20I%20want%20to%20order%20a%20sphatlo%20for%20collection." class="wa-header" target="_blank">
-        💬 Order
-      </a>
     </div>
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="container">
-    <h1>Loaded <span class="accent">Sphatlo</span><br>Made Fresh</h1>
-    <p>Atchaar, ribs, eggs, russian, vienna & chips — proper township flavour, ready for collection.</p>
-    <div class="hero-btns">
-      <a href="#menu" class="btn btn-accent">View Sphatlo Menu</a>
-      <a href="https://wa.me/27839917443?text=Hi%20Sphatlo%20Spot%20%F0%9F%91%8B%20I%20want%20to%20order%20a%20sphatlo%20for%20collection." class="btn btn-outline" target="_blank">WhatsApp to Order</a>
-    </div>
-    <div class="hero-meta">
-      <div>
-        <strong>07:30 – 18:00</strong>
-        OPEN DAILY
+  <div class="c">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <h1>Your Daily<br><span>Sphatlo Fix</span></h1>
+        <p>Freshly made sphatlo, ribs, eggs & chips — order now, collect when ready.</p>
+        <div class="hbtns">
+          <a href="#menu" class="btn ba">See Menu</a>
+          <a href="https://wa.me/27839917443?text=Hi%20Mukomani%20%F0%9F%91%8B%20I%20want%20to%20order%20for%20collection." class="btn bo" target="_blank" rel="noopener">WhatsApp Order</a>
+        </div>
+        <div class="hm">
+          <div><strong>07:30 – 18:00</strong>Open daily</div>
+          <div><strong>Collection only</strong>No delivery</div>
+          <div><strong>083 991 7443</strong>WhatsApp</div>
+        </div>
       </div>
-      <div>
-        <strong>Collection only</strong>
-        NO DELIVERY
-      </div>
-      <div>
-        <strong>083 991 7443</strong>
-        WHATSAPP
+      <div class="hero-img empty" id="heroImg">
+        <!-- Replace with: <img src="assets/hero.jpg" alt="Mukomani Sphatlo"> -->
       </div>
     </div>
   </div>
 </section>
 
-<div class="intro-strip">
-  Order on WhatsApp → Collect when ready → Pay on the spot
-</div>
+<div class="strip">WhatsApp your order · Collect fresh · Pay on collection</div>
 
-<!-- MENU -->
-<section class="menu-section" id="menu">
-  <div class="container">
-    <div class="section-label">Our Menu</div>
-    <h2 class="section-title">Sphatlo & Extras</h2>
-    <p class="section-sub">All prices include the basics. Add what you like.</p>
+<section class="menu" id="menu">
+  <div class="c">
+    <div class="sl">Menu</div>
+    <h2 class="stitle">Sphatlo & Sides</h2>
+    <p class="ssub">Tap Add, then send your order on WhatsApp.</p>
 
-    <!-- Classic -->
-    <div class="item" data-name="Atchaar-Polony" data-price="22">
-      <div class="item-top">
-        <div class="item-name">Atchaar-Polony</div>
-        <div class="item-price">R22</div>
-      </div>
-      <div class="item-desc">The classic starter sphatlo</div>
-      <div class="tags">
-        <span class="tag">Atchaar</span>
-        <span class="tag">Polony</span>
-      </div>
-      <div class="item-bottom">
-        <span></span>
-        <button class="add-btn">Add</button>
+    <div class="item" data-n="Atchaar-Polony" data-p="22">
+      <div class="item-img empty"><!-- <img src="assets/atchaar-polony.jpg" alt=""> --></div>
+      <div class="item-body">
+        <div class="it"><div class="in">Atchaar-Polony</div><div class="ip">R22</div></div>
+        <div class="id">Classic starter sphatlo</div>
+        <div class="tags"><span class="tag">Atchaar</span><span class="tag">Polony</span></div>
+        <div class="ib"><span></span><button class="add">Add</button></div>
       </div>
     </div>
 
-    <!-- Ribs -->
-    <div class="item" data-name="4 Ribs, Chips & 2 Eggs" data-price="52">
-      <div class="item-top">
-        <div class="item-name">4 Ribs, Chips & 2 Eggs</div>
-        <div class="item-price">R52</div>
-      </div>
-      <div class="item-desc">Hearty plate with ribs and eggs</div>
-      <div class="tags">
-        <span class="tag">4 Ribs</span>
-        <span class="tag">Chips</span>
-        <span class="tag">2 Eggs</span>
-      </div>
-      <div class="item-bottom">
-        <span></span>
-        <button class="add-btn">Add</button>
+    <div class="item" data-n="4 Ribs, Chips & 2 Eggs" data-p="52">
+      <div class="item-img empty"><!-- <img src="assets/ribs-eggs.jpg" alt=""> --></div>
+      <div class="item-body">
+        <div class="it"><div class="in">4 Ribs, Chips & 2 Eggs</div><div class="ip">R52</div></div>
+        <div class="id">Hearty plate with ribs and eggs</div>
+        <div class="tags"><span class="tag">4 Ribs</span><span class="tag">Chips</span><span class="tag">2 Eggs</span></div>
+        <div class="ib"><span></span><button class="add">Add</button></div>
       </div>
     </div>
 
-    <!-- Special -->
-    <div class="item featured" data-name="Special – 4 Ribs, Chips, 2 Eggs, Atchaar & Choice" data-price="208">
-      <div class="item-top">
-        <div class="item-name">Full Special Plate</div>
-        <div class="item-price">R208</div>
-      </div>
-      <div class="item-desc">4 Ribs + Chips + 2 Eggs + Atchaar + your choice</div>
-      <div class="tags">
-        <span class="tag">4 Ribs</span>
-        <span class="tag">Chips</span>
-        <span class="tag">Eggs</span>
-        <span class="tag">Atchaar</span>
-        <span class="tag">Choice</span>
-      </div>
-      <div class="item-bottom">
-        <span class="badge deal">BIG PLATE</span>
-        <button class="add-btn">Add</button>
+    <div class="item feat" data-n="Special – 4 Ribs, Chips, 2 Eggs, Atchaar & Choice" data-p="208">
+      <div class="item-img empty"><!-- <img src="assets/special-plate.jpg" alt=""> --></div>
+      <div class="item-body">
+        <div class="it"><div class="in">Full Special Plate</div><div class="ip">R208</div></div>
+        <div class="id">4 Ribs + Chips + 2 Eggs + Atchaar + choice</div>
+        <div class="tags"><span class="tag">4 Ribs</span><span class="tag">Chips</span><span class="tag">Eggs</span><span class="tag">Atchaar</span></div>
+        <div class="ib"><span class="badge deal">BIG PLATE</span><button class="add">Add</button></div>
       </div>
     </div>
 
-    <!-- Combos -->
-    <div class="item" data-name="Atchaar Special + Cheese + Russian + Lettuce" data-price="40">
-      <div class="item-top">
-        <div class="item-name">Atchaar Special + Cheese + Russian + Lettuce</div>
-        <div class="item-price">R40</div>
-      </div>
-      <div class="item-desc">Atchaar special base with cheese, russian & lettuce</div>
-      <div class="tags">
-        <span class="tag">Atchaar</span>
-        <span class="tag">Cheese</span>
-        <span class="tag">Russian</span>
-        <span class="tag">Lettuce</span>
-      </div>
-      <div class="item-bottom">
-        <span class="badge hot">POPULAR</span>
-        <button class="add-btn">Add</button>
+    <div class="item" data-n="Atchaar Special + Cheese + Russian + Lettuce" data-p="40">
+      <div class="item-img empty"><!-- <img src="assets/atchaar-special.jpg" alt=""> --></div>
+      <div class="item-body">
+        <div class="it"><div class="in">Atchaar Special + Cheese + Russian + Lettuce</div><div class="ip">R40</div></div>
+        <div class="id">Atchaar special with cheese, russian & lettuce</div>
+        <div class="tags"><span class="tag">Atchaar</span><span class="tag">Cheese</span><span class="tag">Russian</span><span class="tag">Lettuce</span></div>
+        <div class="ib"><span class="badge hot">POPULAR</span><button class="add">Add</button></div>
       </div>
     </div>
 
-    <div class="item" data-name="Vienna + Lettuce" data-price="30">
-      <div class="item-top">
-        <div class="item-name">Vienna + Lettuce</div>
-        <div class="item-price">R30</div>
-      </div>
-      <div class="tags">
-        <span class="tag">Vienna</span>
-        <span class="tag">Lettuce</span>
-      </div>
-      <div class="item-bottom">
-        <span></span>
-        <button class="add-btn">Add</button>
+    <div class="item" data-n="Vienna + Lettuce" data-p="30">
+      <div class="item-img empty"><!-- <img src="assets/vienna.jpg" alt=""> --></div>
+      <div class="item-body">
+        <div class="it"><div class="in">Vienna + Lettuce</div><div class="ip">R30</div></div>
+        <div class="tags"><span class="tag">Vienna</span><span class="tag">Lettuce</span></div>
+        <div class="ib"><span></span><button class="add">Add</button></div>
       </div>
     </div>
 
-    <div class="item" data-name="Half Russian-Vienna-Lettuce" data-price="35">
-      <div class="item-top">
-        <div class="item-name">Half Russian-Vienna-Lettuce</div>
-        <div class="item-price">R35</div>
-      </div>
-      <div class="tags">
-        <span class="tag">Half Russian</span>
-        <span class="tag">Vienna</span>
-        <span class="tag">Lettuce</span>
-      </div>
-      <div class="item-bottom">
-        <span></span>
-        <button class="add-btn">Add</button>
+    <div class="item" data-n="Half Russian-Vienna-Lettuce" data-p="35">
+      <div class="item-img empty"><!-- <img src="assets/half-russian.jpg" alt=""> --></div>
+      <div class="item-body">
+        <div class="it"><div class="in">Half Russian-Vienna-Lettuce</div><div class="ip">R35</div></div>
+        <div class="tags"><span class="tag">Half Russian</span><span class="tag">Vienna</span><span class="tag">Lettuce</span></div>
+        <div class="ib"><span></span><button class="add">Add</button></div>
       </div>
     </div>
 
-    <div class="item" data-name="Russian-Vienna-Lettuce" data-price="40">
-      <div class="item-top">
-        <div class="item-name">Russian-Vienna-Lettuce</div>
-        <div class="item-price">R40</div>
-      </div>
-      <div class="tags">
-        <span class="tag">Russian</span>
-        <span class="tag">Vienna</span>
-        <span class="tag">Lettuce</span>
-      </div>
-      <div class="item-bottom">
-        <span class="badge hot">POPULAR</span>
-        <button class="add-btn">Add</button>
+    <div class="item" data-n="Russian-Vienna-Lettuce" data-p="40">
+      <div class="item-img empty"><!-- <img src="assets/russian-vienna.jpg" alt=""> --></div>
+      <div class="item-body">
+        <div class="it"><div class="in">Russian-Vienna-Lettuce</div><div class="ip">R40</div></div>
+        <div class="tags"><span class="tag">Russian</span><span class="tag">Vienna</span><span class="tag">Lettuce</span></div>
+        <div class="ib"><span class="badge hot">POPULAR</span><button class="add">Add</button></div>
       </div>
     </div>
 
-    <div class="item" data-name="Atchaar Special + Cheese + Russian + Lettuce (Combo 2)" data-price="40">
-      <div class="item-top">
-        <div class="item-name">Atchaar Special + Cheese + Russian + Lettuce</div>
-        <div class="item-price">R40</div>
-      </div>
-      <div class="item-desc">Second combo option</div>
-      <div class="tags">
-        <span class="tag">Atchaar</span>
-        <span class="tag">Cheese</span>
-        <span class="tag">Russian</span>
-        <span class="tag">Lettuce</span>
-      </div>
-      <div class="item-bottom">
-        <span></span>
-        <button class="add-btn">Add</button>
+    <div class="item" data-n="Atchaar Special + Cheese + Russian + Lettuce (2)" data-p="40">
+      <div class="item-img empty"><!-- <img src="assets/atchaar-combo2.jpg" alt=""> --></div>
+      <div class="item-body">
+        <div class="it"><div class="in">Atchaar Special + Cheese + Russian + Lettuce</div><div class="ip">R40</div></div>
+        <div class="id">Second combo option</div>
+        <div class="tags"><span class="tag">Atchaar</span><span class="tag">Cheese</span><span class="tag">Russian</span><span class="tag">Lettuce</span></div>
+        <div class="ib"><span></span><button class="add">Add</button></div>
       </div>
     </div>
 
-    <!-- Chips -->
-    <div class="section-label" style="margin-top:28px;">Sides</div>
-    <h2 class="section-title" style="font-size:1.2rem;margin-bottom:14px;">Chips Only</h2>
-
-    <div class="chips-row">
-      <div class="chip-card" data-name="Small Chips Only" data-price="30">
-        <div class="name">Small Chips</div>
-        <div class="price">R30</div>
-        <button class="add-btn">Add</button>
+    <div class="sl" style="margin-top:22px">Sides</div>
+    <h2 class="stitle" style="font-size:1.1rem;margin-bottom:12px">Chips Only</h2>
+    <div class="chips">
+      <div class="cc" data-n="Small Chips Only" data-p="30">
+        <div class="item-img empty"><!-- <img src="assets/small-chips.jpg" alt=""> --></div>
+        <div>
+          <div class="n">Small Chips</div>
+          <div class="p">R30</div>
+          <button class="add">Add</button>
+        </div>
       </div>
-      <div class="chip-card" data-name="Large Chips Only" data-price="40">
-        <div class="name">Large Chips</div>
-        <div class="price">R40</div>
-        <button class="add-btn">Add</button>
+      <div class="cc" data-n="Large Chips Only" data-p="40">
+        <div class="item-img empty"><!-- <img src="assets/large-chips.jpg" alt=""> --></div>
+        <div>
+          <div class="n">Large Chips</div>
+          <div class="p">R40</div>
+          <button class="add">Add</button>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INFO -->
-<section class="info-section" id="contact">
-  <div class="container">
-    <div class="section-label">Info</div>
-    <h2 class="section-title" style="margin-bottom:16px;">Collection Details</h2>
-    <div class="info-card">
-      <div class="info-row">
-        <span class="icon">📞</span>
-        <div>
-          <strong>083 991 7443</strong><br>
-          <span style="color:var(--muted);font-size:0.82rem;">WhatsApp or call</span>
-        </div>
+<section class="info" id="contact">
+  <div class="c">
+    <div class="sl">Visit</div>
+    <h2 class="stitle" style="margin-bottom:14px">Collection Info</h2>
+    <div class="ic">
+      <div class="ir"><span class="icn">📞</span><div><strong>083 991 7443</strong><br><span style="color:var(--m);font-size:.78rem">WhatsApp or call</span></div></div>
+      <div class="ir"><span class="icn">🕐</span><div><strong>07:30 – 18:00</strong><br><span style="color:var(--m);font-size:.78rem">Open every day</span></div></div>
+      <div class="ir"><span class="icn">📍</span><div><strong>Collection only</strong><br><span style="color:var(--m);font-size:.78rem">Come fetch when ready</span></div></div>
+      <div class="addr-photo empty" id="locImg">
+        <!-- Replace with: <img src="assets/location.jpg" alt="Shop location"> -->
       </div>
-      <div class="info-row">
-        <span class="icon">🕐</span>
-        <div>
-          <strong>07:30 – 18:00</strong><br>
-          <span style="color:var(--muted);font-size:0.82rem;">Open every day</span>
-        </div>
-      </div>
-      <div class="info-row">
-        <span class="icon">📍</span>
-        <div>
-          <strong>Collection only</strong><br>
-          <span style="color:var(--muted);font-size:0.82rem;">Come fetch when ready</span>
-        </div>
-      </div>
-      <a href="https://maps.app.goo.gl/8neYe5YUngPT14Zv9?g_st=aw" class="map-link" target="_blank">
-        📍 View Location on Maps
-      </a>
-      <a href="https://wa.me/27839917443?text=Hi%20Sphatlo%20Spot%20%F0%9F%91%8B%20I%20want%20to%20order%20a%20sphatlo%20for%20collection." class="wa-link" target="_blank">
-        💬 WhatsApp Your Order
-      </a>
+      <a href="https://maps.app.goo.gl/8neYe5YUngPT14Zv9?g_st=aw" class="ml" target="_blank" rel="noopener">📍 Open in Google Maps</a>
+      <a href="https://wa.me/27839917443?text=Hi%20Mukomani%20%F0%9F%91%8B%20I%20want%20to%20order%20for%20collection." class="wl" target="_blank" rel="noopener">💬 WhatsApp Your Order</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="brand">Sphatlo Spot</div>
-  <p>Loaded • Fresh • Ready to Collect</p>
-  <p class="copy">© 2026 Sphatlo Spot</p>
+  <div class="b">Mukomani</div>
+  <p>Proper sphatlo · Fresh daily · Collection only</p>
+  <p class="cp">© 2026 Mukomani</p>
 </footer>
 
-<!-- CART BAR -->
-<div class="cart-bar" id="cartBar">
-  <div class="cart-inner">
-    <div class="cart-info">
-      <span id="cartCount">0 items</span> · <strong id="cartTotal">R0</strong>
-    </div>
-    <button class="cart-btn" id="viewCartBtn">View Order</button>
+<!-- Floating WhatsApp chat -->
+<a href="https://wa.me/27839917443?text=Hi%20Mukomani%20%F0%9F%91%8B%20I%20want%20to%20order%20for%20collection." class="chat-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<div class="cb" id="bar">
+  <div class="ci">
+    <div class="cif"><span id="cnt">0 items</span> · <strong id="tot">R0</strong></div>
+    <button class="cbt" id="view">View Order</button>
   </div>
 </div>
 
-<!-- CART MODAL -->
-<div class="modal-overlay" id="cartModal">
-  <div class="modal">
-    <h3>Your Sphatlo Order</h3>
-    <div id="cartItems"></div>
-    <div class="cart-total">
-      <span>Total</span>
-      <span id="modalTotal">R0</span>
-    </div>
-
-    <div class="checkout-form">
-      <div>
-        <label for="custName">Your Name *</label>
-        <input type="text" id="custName" placeholder="Enter your name" required>
-      </div>
-      <div>
-        <label for="custPhone">Phone Number *</label>
-        <input type="tel" id="custPhone" placeholder="e.g. 083 123 4567" required>
-      </div>
-      <div>
-        <label for="custTime">Collection Time</label>
-        <select id="custTime">
+<div class="mo" id="modal">
+  <div class="md">
+    <h3>Your Order</h3>
+    <div id="items"></div>
+    <div class="ct"><span>Total</span><span id="mtot">R0</span></div>
+    <div class="cf">
+      <div><label for="nm">Your Name *</label><input type="text" id="nm" placeholder="Enter your name" required></div>
+      <div><label for="ph">Phone Number *</label><input type="tel" id="ph" placeholder="e.g. 083 123 4567" required></div>
+      <div><label for="tm">Collection Time</label>
+        <select id="tm">
           <option value="As soon as ready">As soon as ready</option>
           <option value="In 30 minutes">In 30 minutes</option>
           <option value="In 1 hour">In 1 hour</option>
           <option value="Later today">Later today</option>
         </select>
       </div>
-      <div class="form-error" id="formError">Please enter your name and phone number.</div>
+      <div class="fe" id="err">Please enter your name and phone number.</div>
     </div>
-
-    <div class="modal-actions">
-      <button class="btn btn-accent" id="whatsappOrderBtn" style="width:100%;height:48px;background:var(--green);">
-        💬 Send Order on WhatsApp
-      </button>
-      <button class="close-modal" id="closeModal">Keep Browsing</button>
+    <div class="ma">
+      <button class="btn ba" id="send" style="width:100%;height:46px;background:var(--g)">💬 Send Order on WhatsApp</button>
+      <button class="cm" id="close">Keep Browsing</button>
     </div>
   </div>
 </div>
 
 <script>
-  // Open / Closed status
-  function updateStatus() {
-    const now = new Date();
-    const time = now.getHours() * 60 + now.getMinutes();
-    const open = 7 * 60 + 30;
-    const close = 18 * 60;
-    const badge = document.getElementById('statusBadge');
-    const text = document.getElementById('statusText');
-    if (time >= open && time < close) {
-      badge.className = 'status open';
-      text.textContent = 'Open';
-    } else {
-      badge.className = 'status closed';
-      text.textContent = 'Closed';
-    }
+(function(){
+  var cart=[],bar=document.getElementById('bar'),modal=document.getElementById('modal');
+  function status(){
+    var n=new Date(),t=n.getHours()*60+n.getMinutes(),o=450,c=1080,b=document.getElementById('sb'),s=document.getElementById('st'),i=document.getElementById('sicon');
+    if(t>=o&&t<c){b.className='status open';s.textContent='OPEN';i.textContent='●'}
+    else{b.className='status closed';s.textContent='CLOSED';i.textContent='○'}
   }
-  updateStatus();
-  setInterval(updateStatus, 60000);
-
-  // Cart
-  let cart = [];
-
-  function addToCart(name, price) {
-    const existing = cart.find(i => i.name === name);
-    if (existing) existing.qty += 1;
-    else cart.push({ name, price, qty: 1 });
-    renderCart();
+  status();setInterval(status,6e4);
+  function total(){return cart.reduce(function(s,i){return s+i.p*i.q},0)}
+  function count(){return cart.reduce(function(s,i){return s+i.q},0)}
+  function render(){
+    var c=count(),t=total();
+    if(c>0){bar.classList.add('show');document.getElementById('cnt').textContent=c+(c===1?' item':' items');document.getElementById('tot').textContent='R'+t}
+    else bar.classList.remove('show');
+    document.getElementById('items').innerHTML=cart.map(function(i,x){
+      return '<div class="cti"><span>'+i.q+'× '+i.n+'</span><span>R'+(i.p*i.q)+' <button class="rm" data-x="'+x+'">✕</button></span></div>'
+    }).join('');
+    document.getElementById('mtot').textContent='R'+t;
+    document.querySelectorAll('.rm').forEach(function(b){b.onclick=function(){cart.splice(+this.dataset.x,1);render()}});
   }
-
-  function removeFromCart(idx) {
-    cart.splice(idx, 1);
-    renderCart();
+  function add(n,p){
+    var e=cart.find(function(i){return i.n===n});
+    if(e)e.q++;else cart.push({n:n,p:p,q:1});
+    render();
   }
-
-  function getTotal() {
-    return cart.reduce((s, i) => s + i.price * i.qty, 0);
-  }
-
-  function getCount() {
-    return cart.reduce((s, i) => s + i.qty, 0);
-  }
-
-  function renderCart() {
-    const bar = document.getElementById('cartBar');
-    const count = getCount();
-    const total = getTotal();
-
-    if (count > 0) {
-      bar.classList.add('show');
-      document.getElementById('cartCount').textContent = count + (count === 1 ? ' item' : ' items');
-      document.getElementById('cartTotal').textContent = 'R' + total;
-    } else {
-      bar.classList.remove('show');
-    }
-
-    document.getElementById('cartItems').innerHTML = cart.map((i, idx) =>
-      `<div class="cart-item">
-        <span>${i.qty}× ${i.name}</span>
-        <span>R${i.price * i.qty}
-          <button class="remove" onclick="removeFromCart(${idx})">✕</button>
-        </span>
-      </div>`
-    ).join('');
-
-    document.getElementById('modalTotal').textContent = 'R' + total;
-  }
-
-  // Add buttons (items + chips)
-  document.querySelectorAll('.item .add-btn, .chip-card .add-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
-      const parent = this.closest('.item') || this.closest('.chip-card');
-      addToCart(parent.dataset.name, parseInt(parent.dataset.price));
-      this.textContent = 'Added ✓';
-      setTimeout(() => this.textContent = 'Add', 800);
-    });
+  document.querySelectorAll('.item .add,.cc .add').forEach(function(b){
+    b.onclick=function(){
+      var p=this.closest('.item')||this.closest('.cc');
+      add(p.dataset.n,+p.dataset.p);
+      this.textContent='Added ✓';
+      var t=this;setTimeout(function(){t.textContent='Add'},700);
+    };
   });
-
-  document.getElementById('viewCartBtn').addEventListener('click', () => {
-    document.getElementById('formError').classList.remove('show');
-    document.getElementById('cartModal').classList.add('show');
-  });
-
-  document.getElementById('closeModal').addEventListener('click', () => {
-    document.getElementById('cartModal').classList.remove('show');
-  });
-
-  document.getElementById('cartModal').addEventListener('click', e => {
-    if (e.target.id === 'cartModal') {
-      document.getElementById('cartModal').classList.remove('show');
-    }
-  });
-
-  document.getElementById('whatsappOrderBtn').addEventListener('click', () => {
-    const name = (document.getElementById('custName').value || '').trim();
-    const phone = (document.getElementById('custPhone').value || '').trim();
-    const time = document.getElementById('custTime').value || 'As soon as ready';
-
-    if (!name || !phone) {
-      document.getElementById('formError').classList.add('show');
-      return;
-    }
-    document.getElementById('formError').classList.remove('show');
-    if (cart.length === 0) return;
-
-    let lines = [];
-    lines.push('SPHATLO SPOT ORDER');
-    lines.push('────────────────');
-    lines.push('Name: ' + name);
-    lines.push('Phone: ' + phone);
-    lines.push('Collect: ' + time);
-    lines.push('────────────────');
-    lines.push('Items (' + getCount() + '):');
-    lines.push('');
-    cart.forEach((i, n) => {
-      lines.push((n + 1) + ') ' + i.qty + ' x ' + i.name + ' – R' + (i.price * i.qty));
-    });
-    lines.push('');
-    lines.push('────────────────');
-    lines.push('TOTAL: R' + getTotal());
-    lines.push('Pay on collection');
-    lines.push('────────────────');
-    lines.push('Please confirm. Thanks!');
-
-    const msg = encodeURIComponent(lines.join('\n'));
-    window.open('https://wa.me/27839917443?text=' + msg, '_blank');
-  });
+  document.getElementById('view').onclick=function(){document.getElementById('err').classList.remove('show');modal.classList.add('show')};
+  document.getElementById('close').onclick=function(){modal.classList.remove('show')};
+  modal.onclick=function(e){if(e.target===modal)modal.classList.remove('show')};
+  document.getElementById('send').onclick=function(){
+    var n=document.getElementById('nm').value.trim(),p=document.getElementById('ph').value.trim(),t=document.getElementById('tm').value||'As soon as ready';
+    if(!n||!p){document.getElementById('err').classList.add('show');return}
+    document.getElementById('err').classList.remove('show');
+    if(!cart.length)return;
+    var L=['MUKOMANI ORDER','────────────────','Name: '+n,'Phone: '+p,'Collect: '+t,'────────────────','Items ('+count()+'):',''];
+    cart.forEach(function(i,x){L.push((x+1)+') '+i.q+' x '+i.n+' – R'+(i.p*i.q))});
+    L.push('','────────────────','TOTAL: R'+total(),'Pay on collection','────────────────','Please confirm. Thanks!');
+    window.open('https://wa.me/27839917443?text='+encodeURIComponent(L.join('\n')),'_blank');
+  };
+})();
 </script>
 </body>
 </html>

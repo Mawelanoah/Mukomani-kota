@@ -1,22 +1,29 @@
-# Sphatlo Spot Website
+# Mukomani – Sphatlo Menu Website
 
-Sphatlo-only menu website with WhatsApp ordering + cart.
+Professional mobile-first site for Mukomani sphatlo orders.
 
 ## Details
-- **Name:** Sphatlo Spot
+- **Brand:** Mukomani
 - **WhatsApp:** 083 991 7443
 - **Hours:** 07:30 – 18:00
 - **Service:** Collection only
-- **Maps:** Same location as previous (https://maps.app.goo.gl/8neYe5YUngPT14Zv9)
+- **Maps:** https://maps.app.goo.gl/8neYe5YUngPT14Zv9?g_st=aw
 
-## How to use
-1. Open index.html in any browser
-2. Or drag the folder to https://app.netlify.com/drop for free hosting
+## How to add photos
+1. Create an `assets` folder next to index.html
+2. Add your images:
+   - `assets/hero.jpg` – main hero photo
+   - `assets/location.jpg` – shop / address photo
+   - One photo per menu item (see comments in the HTML)
+3. Uncomment the `<img>` tags inside each placeholder
 
-## Menu included
-- Atchaar-Polony
-- 4 Ribs, Chips & 2 Eggs
-- Full Special Plate (R208)
-- Atchaar + Cheese + Russian + Lettuce combos
-- Vienna / Russian combos
-- Small & Large Chips
+## How to host
+- Drag the folder to https://app.netlify.com/drop
+- Or upload to GitHub Pages
+
+## Features
+- Cart + WhatsApp order message
+- Floating chat button
+- Open / Closed status
+- Photo slots for hero, items & location
+- Fast mobile load (system fonts, no external requests)
